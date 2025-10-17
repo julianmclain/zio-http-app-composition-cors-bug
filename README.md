@@ -10,7 +10,7 @@ This repository demonstrates a bug in ZIO HTTP where combining multiple HTTP app
 
 ## Problem Description
 
-When composing two ZIO HTTP apps with different CORS middleware configurations using the `++` operator, the CORS configuration from the second app appears to override the CORS configuration from the first app, affecting both routes.
+When composing two ZIO HTTP apps with different CORS middleware configurations using the `++` operator, the CORS configuration from the second app appears to override the CORS configuration from the first app.
 
 ### Expected Behavior
 
