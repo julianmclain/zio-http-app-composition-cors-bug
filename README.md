@@ -12,6 +12,7 @@ This repository demonstrates a bug in ZIO HTTP where combining multiple HTTP app
 
 When composing two ZIO HTTP apps with different CORS middleware configurations using the `++` operator, the CORS configuration from the second app appears to override the CORS configuration from the first app.
 
+```scala
 object Main extends ZIOAppDefault {
 
   case class StrictCorsConfig(allowedOrigin: String) extends CorsConfig
@@ -50,7 +51,7 @@ object Main extends ZIOAppDefault {
       .flatMap(_.serve)
       .provide(Server.default)
 }
-
+```
 ### Expected Behavior
 
 - `/app1/health` should accept requests from `http://localhost:5173` only
